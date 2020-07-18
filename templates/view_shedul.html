@@ -1,0 +1,45 @@
+
+{% extends 'common_admin_menu.html' %}
+{% block admin %}
+    {% load static %}
+     <table class="table" align="center" style="width: 300px;height: 300px">
+  <thead class="thead-dark">
+  <tr>
+      <th scope="col" colspan="8" style="text-align: center"><h3>Shedule a New Course</h3></th>
+  </tr>
+    <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">FACULTY</th>
+        <th scope="col">DATE</th>
+        <th scope="col">TIME</th>
+        <th scope="col">FEE</th>
+        <th scope="col">DURATION</th>
+        <th scope="col">UPDATE</th>
+        <th scope="col">DELETE</th>
+    </tr>
+  {% for x in data %}
+      <tr>
+      <th scope="col">{{ x.Name }}</th>
+      <th scope="col">{{ x.Faculty }}</th>
+      <th scope="col">{{ x.Date}}</th>
+      <th scope="col">{{ x.Time }}</th>
+      <th scope="col">{{ x.Fee }}</th>
+      <th scope="col">{{ x.Duration }}</th>
+      <th scope="col">
+          {# In this example we are sending data in hidden field #}
+          <form action="{% url 'showupdate' %}">
+              <input type="hidden" name="t1" value="{{ x.Idno }}">
+            <button type="submit">Updata</button>
+          </form>
+      </th>
+      <th scope="col">
+          {# In this example we are sending data in hyperelint #}
+             <a href="{% url 'delete' %}?no={{ x.Idno }}">
+          <img src="{% static 'images/deleteicon.png' %}">
+             </a>
+      </th>
+      </tr>
+  {% endfor %}
+  </thead>
+     </table>
+{% endblock %}

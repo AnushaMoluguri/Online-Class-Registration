@@ -1,0 +1,9 @@
+{% extends 'commona_enrol_menu.html' %}
+{% block anu %}
+    {% load static %}
+    <table align="center">
+    <tr><th style="text-align: center; border-radius: 50%"> Welcome Miss/Mr {{ data.name }}</th></tr>
+    <tr><th> <img src="{% static 'images/student.jpg' %}" width="500" height="300"  style=" border-radius: 8px;"></th></tr>
+    </table>
+
+{% endblock %}

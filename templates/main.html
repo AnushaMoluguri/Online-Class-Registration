@@ -1,0 +1,37 @@
+
+{% extends 'common_stu_menu.html' %}
+
+{% block anu %}
+    {% load static %}
+    <table>
+  <td>
+      <td><img src="{% static 'images/sathya.jpg' %}" width="550" height="450"></td>
+
+      <td>
+      <table>
+          <tr><th scope="col" style="text-align: center;color: white;background-color: black"><h4>Available Courses</h4></th></tr>
+          <tr>
+                  {% for x in da %}
+                      <th>
+                     <table class="table table-striped" style="text-align: center" align="center">
+                         <tr><td>Name:{{ x.Name }}</td></tr>
+                         <tr><td>Date:{{ x.Date }}</td></tr>
+                         <tr><td>Faculty:{{ x.Faculty }}</td></tr>
+                         <tr><td>Time:{{ x.Time }}</td></tr>
+                         <tr><td>Fee:{{ x.Fee }}</td></tr>
+                         <tr><td>Duration:{{ x.Duration }}</td></tr>
+                     </table>
+                      </th>
+
+                  {% endfor %}
+      </tr>
+
+      </table>
+      </td>
+  </tr>
+
+
+    </table>
+
+
+{% endblock %}
