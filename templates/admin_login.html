@@ -1,12 +1,13 @@
-
+{% extends 'common_admin_title.html' %}
+{% block anus %}
 <!doctype html>
 <html lang="en">
   <head>
 
       <style>
           #tab{
-              width: 300px;
-              height: 300px;
+              width: 500px;
+              height: 500px;
               text-align: center;
           }
            #e_msg
@@ -29,7 +30,7 @@
   {% csrf_token %}
   <table class="table table-sm table-dark" id="tab" align="center" border="2">
   <thead>
-  <tr><th align="center"><h2>Python With Naveen</h2></th></tr>
+  <tr><th align="center"><h2>Admin login</h2></th></tr>
   <tr><td scope="col"><input type="text" placeholder="Username" name="a1" required></td></tr>
   <tr><td scope="col"><input type="password" placeholder="Password" name="a2" required></td></tr>
   <tr><th><button type="submit" class="btn btn-light">Login</button></th></tr>
@@ -58,3 +59,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>
+{% endblock %}

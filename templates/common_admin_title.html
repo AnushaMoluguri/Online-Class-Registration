@@ -1,8 +1,23 @@
-{% extends 'common_admin_title.html' %}
-{% block anus %}
 <!doctype html>
 <html lang="en">
   <head>
+      <style>
+   #grad {
+  background-image: linear-gradient(red, yellow);
+}
+   #grad1 {
+            background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+              text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+          #move{
+              background-image: linear-gradient(yellow,orange,deeppink);
+          }
+
+          #copy{
+                background-image: linear-gradient(darkblue,blue);
+                text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+          }
+</style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,17 +28,12 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <table class="table table-sm table-dark" align="center" style="width: 600px;height: 600px">
+    <table class="table table-borderless table-dark">
   <thead>
-
-  <tr>
-      <th style="text-align: center"><h4><a href="{% url 'shedule_new_cls' %}"> Shedule New Class</a></h4></th>
-      <th style="text-align: center"><h4><a href="{% url 'view_shedule' %}"> View All Sheduled Classes</a></h4></th>
-  </tr>
-  </thead>
-    </table>
-    {% block admin %}
-    {% endblock %}
+    <tr class="bg-warning"><th id="grad1" scope="col" style="text-align: center;color: whitesmoke;font-size: 60px">Python with Naveen</th></tr>
+    <tr><th id="move"><marquee>WELCOME to Admin Page</marquee></th></tr>
+    <tr id="grad"><th>{% block anus %}{% endblock %}</th>
+    <tr class="bg-warning"><th id="copy" style="text-align: center;font-size:30px;color: white">Copyright@Naveen</th></tr>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -32,4 +42,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>
-{% endblock %}
